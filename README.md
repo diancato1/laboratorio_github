@@ -99,3 +99,30 @@ Una vez creado el registro del commit localmente ya se pueden aplicar los cambio
 ### Ahora en el repositorio se puede ver los cambios que hiciste a los archivos junto el mensaje del commit que realizaste
 ![Paso 5-1](images/paso5-1.png)
 
+## 6.Aplicar cambios de una rama a otra.
+
+Para aplicar cambios de una rama a otra de forma facil y llevando un registro de historico de commits se utiliza el comando "merge".
+
+Luego de que se realizan cambios en los archivos de la rama dev requiero traermelos para mi rama main, para poder realizar esta accion se requiere primero cambiar a la rama main, para hacer el cambio se utiliza el comando.
+
+```bash
+    git switch main
+```
+
+### Importante:
+el comando de "git switch" se le pueden agregar flags para variar sus acciones, en este caso no se le agrega ninguna flag (-c,-D,etc...) utilizandolo sin flags me permite cambiar entre ramas.
+
+Una vez se halla cambiado de rama y corroborar con el comando "git branch" que se esta en main se puede utilizar Ahora merge:
+```bash
+    git merge dev
+```
+### El comando se puede interpretar de la siguiente forma
+la rama actual donde estoy ubicado (main) ----> desea traer los cambios de la rama dev
+
+Luego de ejecutado el comando no hay que realizar ningun "git add" o "git commit" ya que el merge lo que hace es traer todos los cambios que se realizaron en la rama dev, solo quedaria aplicar el siguiente comando:
+```bash
+    git push origin main
+```
+## Ahora puedes ver los cambios que hiciste en la rama dev en la rama main.
+
+### 7. Aplicar merge solicitando Pull Request (PR)
